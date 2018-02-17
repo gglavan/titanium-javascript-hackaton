@@ -20,7 +20,7 @@ exports.postLessonForm  = (req, res) => {
 
   lesson.save((err) => {
     if (err) { return next(err); }
-    console.log('Lesson saved')
-      res.redirect('/');
+    //console.log('Lesson saved');
+      res.redirect('/admin');
   });
 };

@@ -5,6 +5,4 @@ const lessonSchema = new mongoose.Schema({
   description: { type: String}
 });
 
-const Lesson = mongoose.model('Lesson', lessonSchema);
-
 module.exports = Lesson;

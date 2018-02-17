@@ -3,22 +3,7 @@ extends ../layout
 block content
     .page-header
         h3 lessons
-        .col-sm-6
             h2 Lesson name
             p
             p
-
-        .col-sm-6
-            h2 Lesson name 2
-            p  .
-            p
-
-            table
-                for person in personList
-                    tr
-                        td= person.id
-                        td
-                            a(href='/person/' + person.id) #{person.name}
-                        td= person.address
-                        td= person.phone
 
