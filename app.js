@@ -36,6 +36,7 @@ const lessonController = require('./controllers/lesson');
 const taskController = require('./controllers/task');
 const apiController = require('./controllers/api');
 const contactController = require('./controllers/contact');
+const detailTaskController = require("./controllers/detail_task")
 
 /**
  * API keys and Passport configuration.
@@ -145,6 +146,7 @@ app.get('/admin/task-form', taskController.getTaskForm);
 app.post('/admin/lesson-form', lessonController.postLessonForm);
 app.post('/admin/task-form', taskController.postTaskForm);
 app.get('/lessons', lessonController.getLessons);
+app.get('/tasks', detailTaskController.getDetailTask)
 
 
 app.get('/test', (req, res) => {
