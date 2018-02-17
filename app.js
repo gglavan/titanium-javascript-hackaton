@@ -136,12 +136,12 @@ app.post('/account/profile', passportConfig.isAuthenticated, userController.post
 app.post('/account/password', passportConfig.isAuthenticated, userController.postUpdatePassword);
 app.post('/account/delete', passportConfig.isAuthenticated, userController.postDeleteAccount);
 app.get('/account/unlink/:provider', passportConfig.isAuthenticated, userController.getOauthUnlink);
-/////////
+
+/////////////////// Admin page
 app.get('/admin', adminController.getAdmin);
-// app.get('/admin', (req, res) => {
-//   res.json({title:'Dici'})
-// })
-// app.post('/admin', userController.postAdmin);
+app.get('/admin/lesson-form', adminController.getLessonForm);
+app.post('/admin/lesson-form', adminController.postLessonForm);
+
 
 app.get('/test', (req, res) => {
     res.json({
