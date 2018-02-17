@@ -7,12 +7,6 @@ exports.getTaskForm  = (req, res) => {
 };
 
 exports.postTaskForm  = (req, res) => {
-  // const task = new Task({
-  //   lessonId: req.body.lessonId,
-  //   name: req.body.name,
-  //   description: req.body.description,
-  //   test: req.body.test
-  // });
 
   Task.create({
     lessonId: req.body.lessonId,
@@ -30,7 +24,7 @@ exports.postTaskForm  = (req, res) => {
 };
 exports.getTask = (req, res) => {
     const id = req.params.id;
-    Lesson.findById(id)
+    Task.findById(id)
         .exec()
         .then(doc => {
             if (doc) {

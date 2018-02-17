@@ -62,38 +62,6 @@ exports.getLesson = async(req, res) => {
           .status(404)
           .json({ message: "No valid entry found for provided ID" });
   }
-  // Lesson.findById(id)
-  //   .exec()
-  //   .then(lesson => {
-  //     if (lesson) {
-  //       Task.find({$where: {
-  //             lessonId: lesson._id
-  //           }}).exec().then(tasks =>
-  //             console.log(doc);
-  //             res.render('lessons/lesson', {
-  //               lesson,
-  //               tasks
-  //             });
-  //           )
-        
-        
-  //     } else {
-  //       res
-  //         .status(404)
-  //         .json({ message: "No valid entry found for provided ID" });
-  //     }
-  //   })
-  //   .catch(err => {
-  //     console.log(err);
-  //     res.status(500).json({ error: err });
-  //   });
-
-
-    // lesson.save((err) => {
-    //     if (err) { return next(err); }
-    //     console.log('Lesson saved')
-    //     res.redirect('/admin');
-    // });
 };
 
 exports.getLessons = (req, res) => {
