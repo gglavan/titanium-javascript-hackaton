@@ -6,16 +6,22 @@ block content
 
   form.form-horizontal(method='POST')
     input(type='hidden', name='_csrf', value=_csrf)
+
+    .form-group
+      label(class='col-sm-2 control-label', for='description') Lesson ID
+      .col-sm-8
+        input.form-control(name='lessonId', id='description', rows='7', autofocus=true)
+
     .form-group
       label(class='col-sm-2 control-label', for='name') Task Name
       .col-sm-8
-        input.form-control(type='text', name='name', id='name', autofocus=true)
+        input.form-control(type='text', name='name', id='name')
   
     .form-group
       label(class='col-sm-2 control-label', for='description') Task Description
       .col-sm-8
-        textarea.form-control(name='message', id='description', rows='7')
-
+        textarea.form-control(name='description', id='description', rows='7')
+    
     .form-group
       label(class='col-sm-2 control-label', for='test') Task tests
       .col-sm-8

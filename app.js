@@ -51,6 +51,7 @@ const app = express();
  * Connect to MongoDB.
  */
 mongoose.Promise = global.Promise;
+console.log(process.env.MONGODB_URI)
 mongoose.connect(process.env.MONGODB_URI || process.env.MONGOLAB_URI);
 mongoose.connection.on('error', (err) => {
   console.error(err);
@@ -145,7 +146,7 @@ app.get('/admin/task-form', taskController.getTaskForm);
 app.post('/admin/lesson-form', lessonController.postLessonForm);
 app.post('/admin/task-form', taskController.postTaskForm);
 app.get('/lessons', lessonController.getLessons);
-
+app.get('/lessons/:id', lessonController.getLesson);
 
 app.get('/test', (req, res) => {
     res.json({

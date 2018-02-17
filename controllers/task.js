@@ -7,15 +7,46 @@ exports.getTaskForm  = (req, res) => {
 };
 
 exports.postTaskForm  = (req, res) => {
-  const task = new Task({
+  // const task = new Task({
+  //   lessonId: req.body.lessonId,
+  //   name: req.body.name,
+  //   description: req.body.description,
+  //   test: req.body.test
+  // });
+
+  Task.create({
+    lessonId: req.body.lessonId,
     name: req.body.name,
     description: req.body.description,
     test: req.body.test
-  });
-
-  task.save((err) => {
-    if (err) { return next(err); }
+  }, (err) => {
+    if (err) { 
+      res.status(500).json({ error: err });
+      return
+    }
     console.log('Task saved')
       res.redirect('/admin');
   });
+};
+
+exports.getTask = (req, res) => {
+  const id = req.params.id;
+  Lesson.findById(id)
+    .exec()
+    .then(doc => {
+      if (doc) {
+        console.log(doc)
+        res.render('tasks/task', {
+          'task': doc
+        });  
+      } else {
+        res
+          .status(404)
+          .json({ message: "No valid entry found for provided ID" });
+      }
+    })
+    .catch(err => {
+      console.log(err);
+      res.status(500).json({ error: err });
+    });
 };
