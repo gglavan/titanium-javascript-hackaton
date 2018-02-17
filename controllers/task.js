@@ -43,3 +43,30 @@ exports.getTask = (req, res) => {
             res.status(500).json({ error: err });
         });
 };
+
+exports.submitTask = (req, res) => {
+  const id = req.params.id;
+  Task.findById(id).exec()
+  .then(doc => {
+      if (doc) {
+          console.log(doc)
+          res.json({
+            solution: req.body.solution,
+            test: doc.test
+        })
+      } else {
+          res
+              .status(404)
+              .json({ message: "No valid entry found for provided ID" });
+      }
+  })
+  .catch(err => {
+      console.log(err);
+      res.status(500).json({ error: err });
+  });
+  
+
+
+
+
+}

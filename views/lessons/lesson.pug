@@ -9,13 +9,12 @@ block content
   h5=lesson.name
   h4(style={'font-weight': 'bold'}) Lesson Description:
   h5=lesson.description
-
-    //- table
-    //-     //- tr
-    //-     //-     td(style={'font-weight': 'bold','font-size':'24px'}) Name
-    //-     //-     td(style={'font-weight': 'bold','font-size':'24px'}) Description
-    //-     //- each task in tasks
-    //-     //-     tr
-    //-     //-         td(style={'border': '1px solid black','padding':'4px', 'float':'left','width':'250px'})
-    //-     //-             a(style={'text-decoration': 'none','color':'blue'} href=`/tasks/${task._id}`) #{task.name}
-    //-     //-         td(style={'text-decoration': 'none','color':'black','border': '1px solid black','padding':'4px', 'width':'700px'}) #{task.description} </br>
+    table
+        tr
+            td(style={'font-weight': 'bold','font-size':'18px'}) Task name
+            td(style={'font-weight': 'bold','font-size':'18px'}) Description
+        each task in tasks
+            tr
+                td(style={'border': '1px solid black','padding':'4px', 'float':'left','width':'250px'})
+                    a(style={'text-decoration': 'none','color':'blue'} href=`/tasks/${task._id}`) #{task.name}
+                td(style={'text-decoration': 'none','color':'black','border': '1px solid black','padding':'4px', 'width':'700px'}) #{task.description} </br>

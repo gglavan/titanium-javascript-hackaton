@@ -9,3 +9,15 @@ block content
     h4=task.name
     label Task Description:
     h4=task.description
+    
+      form.form-horizontal(method='POST')
+        input(type='hidden', name='_csrf', value=_csrf)
+        .form-group
+          label(class='col-sm-2 control-label', for='test') Solution
+          .col-sm-8
+            textarea.form-control(name='solution', id='solution', rows='10') 
+
+        .form-group
+        .col-sm-offset-2.col-sm-8
+          button.btn.btn-success(type='submit')
+            | Check solution
