@@ -35,8 +35,12 @@ const userController = require('./controllers/user');
 const apiController = require('./controllers/api');
 const contactController = require('./controllers/contact');
 
+//Added now
+const lessonsController  = require('./controllers/lessons');
+
 /**
  * API keys and Passport configuration.
+ *
  */
 const passportConfig = require('./config/passport');
 
@@ -135,6 +139,11 @@ app.post('/account/profile', passportConfig.isAuthenticated, userController.post
 app.post('/account/password', passportConfig.isAuthenticated, userController.postUpdatePassword);
 app.post('/account/delete', passportConfig.isAuthenticated, userController.postDeleteAccount);
 app.get('/account/unlink/:provider', passportConfig.isAuthenticated, userController.getOauthUnlink);
+
+// Added now
+app.get('/lessons', lessonsController.getLessons);
+app.post('/lessons', lessonsController.postLessons);
+
 
 app.get('/test', (req, res) => {
     res.json({
