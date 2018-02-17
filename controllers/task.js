@@ -19,3 +19,24 @@ exports.postTaskForm  = (req, res) => {
       res.redirect('/admin');
   });
 };
+exports.getTask = (req, res) => {
+    const id = req.params.id;
+    Lesson.findById(id)
+        .exec()
+        .then(doc => {
+            if (doc) {
+                console.log(doc)
+                res.render('tasks/task', {
+                    'task': doc
+                });
+            } else {
+                res
+                    .status(404)
+                    .json({ message: "No valid entry found for provided ID" });
+            }
+        })
+        .catch(err => {
+            console.log(err);
+            res.status(500).json({ error: err });
+        });
+};

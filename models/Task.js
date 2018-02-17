@@ -4,7 +4,8 @@ const mongoose = require('mongoose');
 const taskSchema = new mongoose.Schema({
   name: { type: String, unique: true },
   description: { type: String},
-  test: {type: String}
+  test: {type: String},
+  lessonId: {type: String, required: true}
 });
 
 const Task = mongoose.model('Task', taskSchema);

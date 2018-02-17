@@ -146,7 +146,6 @@ app.post('/admin/lesson-form', lessonController.postLessonForm);
 app.post('/admin/task-form', taskController.postTaskForm);
 app.get('/lessons', lessonController.getLessons);
 
-
 app.get('/test', (req, res) => {
     res.json({
       test: 'name'
