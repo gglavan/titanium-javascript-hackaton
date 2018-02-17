@@ -33,6 +33,7 @@ dotenv.load({ path: '.env.example' });
 const homeController = require('./controllers/home');
 const userController = require('./controllers/user');
 const lessonController = require('./controllers/lesson');
+const taskController = require('./controllers/task');
 const apiController = require('./controllers/api');
 const contactController = require('./controllers/contact');
 
@@ -140,7 +141,10 @@ app.get('/account/unlink/:provider', passportConfig.isAuthenticated, userControl
 /////////////////// Admin page
 app.get('/admin', lessonController.getAdmin);
 app.get('/admin/lesson-form', lessonController.getLessonForm);
+app.get('/admin/task-form', taskController.getTaskForm);
 app.post('/admin/lesson-form', lessonController.postLessonForm);
+app.post('/admin/task-form', taskController.postTaskForm);
+app.get('/lessons', lessonController.getLessons);
 
 
 app.get('/test', (req, res) => {

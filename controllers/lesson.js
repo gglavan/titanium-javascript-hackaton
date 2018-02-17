@@ -7,7 +7,7 @@ exports.getAdmin = (req, res) => {
 };
 
 exports.getLessonForm  = (req, res) => {
-  res.render('lessons/lesson', {
+  res.render('lessons/lesson-form', {
     title: 'Admin'
   });
 };
@@ -22,5 +22,11 @@ exports.postLessonForm  = (req, res) => {
     if (err) { return next(err); }
     console.log('Lesson saved')
       res.redirect('/admin');
+  });
+};
+
+exports.getLessons = (req, res) => {
+  res.render('lessons/lessons', {
+      title: 'Lessons'
   });
 };
