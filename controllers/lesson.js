@@ -20,7 +20,6 @@ exports.postLessonForm  = (req, res) => {
         description: req.body.description
     });
 
-<<<<<<< HEAD
   lesson.save((err) => {
     if (err) {
       res.status(500).json({ error: err });
@@ -82,8 +81,8 @@ exports.getLesson = async(req, res) => {
   //     console.log(err);
   //     res.status(500).json({ error: err });
   //   });
-};
-=======
+
+
     lesson.save((err) => {
         if (err) { return next(err); }
         console.log('Lesson saved')
@@ -105,4 +104,3 @@ exports.getLessons = (req, res) => {
             })
         })
 };
->>>>>>> origin/final
