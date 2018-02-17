@@ -4,24 +4,14 @@ block content
   h1 UniTeam
   p.lead Learning Web Application.
   hr
-  .row
+  .row(style={"background-color": "#ecf8f9"})
     .col-sm-6
-      h2 Admin
+      h2(style={"font-family": "Arial"}) Admin
       p This will bring you to a page for adding new tasks.
       p
-        a.btn.btn-default(href='/admin', role='button') View details »
+        a.btn.btn-primary(href='/admin', role='button' style={"margin-top": "18px"}) View details »
     .col-sm-6
       h2 Lessons
       p We provide you the best lessons structured for learning from the basics to advanced skills in JavaScript.
       p
-        a.btn.btn-default(href='/lessons', role='button') View details »
-    .col-sm-6
-      h2 Status
-      p Realtime Monitoring for Express-based Node applications.
-      p
-        a.btn.btn-default(href='/status', role='button') View details »
-    .col-sm-6
-      h2 Contact
-      p We are so glad to work with you and to help you to develop you ideas. Let's get in touch.
-      p
-        a.btn.btn-default(href='/contact', role='button') View details »
+        a.btn.btn-primary(href='/lessons', role='button') View details »

@@ -1,33 +1,33 @@
 .navbar.navbar-default.navbar-fixed-top
-  .container
+  .container(style={"background-color": "#141d26", "color": "white", "border-right": "1px solid white"})
     .navbar-header
       button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
         span.sr-only Toggle navigation
         span.icon-bar
         span.icon-bar
         span.icon-bar
-      a.navbar-brand(href='/')
+      a.navbar-brand(href='/' style={"background-color": "#141d26", "color": "#f9f2f2"})
         i.fa.fa-cube
-        | Project UniTeam
+        |UniTeam
     .collapse.navbar-collapse
       ul.nav.navbar-nav
         li(class=(title === 'Home') ? 'active' : undefined)
-          a(href='/') Home
+          a(href='/' style={"background-color": "#141d26", "color": "#f9f2f2"} onMouseOver="this.style.background='#3a485b'" onMouseOut="this.style.background='#141d26'") Home
         li(class=(title === 'API Examples') ? 'active' : undefined)
-          a(href='/api') API Examples
+          a(href='/api' style={"background-color": "#141d26", "color": "#f9f2f2"} onMouseOver="this.style.background='#3a485b'" onMouseOut="this.style.background='#141d26'") API Examples
         li(class=(title === 'Contact') ? 'active' : undefined)
-          a(href='/contact') Contact
+          a(href='/contact' style={"background-color": "#141d26", "color": "#f9f2f2"} onMouseOver="this.style.background='#3a485b'" onMouseOut="this.style.background='#141d26'") Contact
         li
-          a(href='/status') Status
+          a(href='/status' style={"background-color": "#141d26", "color": "#f9f2f2"} onMouseOver="this.style.background='#3a485b'" onMouseOut="this.style.background='#141d26'") Status
         li(class=(title === 'Admin') ? 'active' : undefined)
-          a(href='/admin') Admin
+          a(href='/admin' style={"background-color": "#141d26", "color": "#f9f2f2"} onMouseOver="this.style.background='#3a485b'" onMouseOut="this.style.background='#141d26'") Admin
         
       ul.nav.navbar-nav.navbar-right
         if !user
           li(class=(title === 'Login') ? 'active' : undefined)
-            a(href='/login') Login
+            a(href='/login' style={"background-color": "#141d26", "color": "#f9f2f2", } onMouseOver="this.style.background='#3a485b'" onMouseOut="this.style.background='#141d26'") Login
           li(class=(title === 'Create Account') ? 'active' : undefined)
-            a(href='/signup') Create Account
+            a(href='/signup' style={"background-color": "#141d26", "color": "#f9f2f2"} onMouseOver="this.style.background='#3a485b'" onMouseOut="this.style.background='#141d26'") Create Account
         else
           li.dropdown(class=(title === 'Account Management') ? 'active' : undefined)
             a.dropdown-toggle(href='#', data-toggle='dropdown')
