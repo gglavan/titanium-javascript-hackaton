@@ -2,6 +2,7 @@ extends ../layout
 
 block content
     .page-header
+<<<<<<< HEAD
         h3 Lessons
         table 
         each lesson in lessonList
@@ -10,3 +11,15 @@ block content
                     a(href=`/lessons/${lesson._id}`) #{lesson.name} <br>
             
 
+=======
+    h1 Lessons <hr>
+    table
+        tr
+            td(style={'font-weight': 'bold','font-size':'24px'}) Name
+            td(style={'font-weight': 'bold','font-size':'24px'}) Description
+        each lesson in lessonList
+            tr
+                td(style={'border': '1px solid black','padding':'4px', 'float':'left','width':'250px'})
+                    a(style={'text-decoration': 'none','color':'blue'} href=`/lessons/${lesson._id}`) #{lesson.name}
+                td(style={'text-decoration': 'none','color':'black','border': '1px solid black','padding':'4px', 'width':'700px'}) #{lesson.description} </br>
+>>>>>>> origin/final
