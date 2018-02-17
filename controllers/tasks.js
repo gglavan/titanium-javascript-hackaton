@@ -1,4 +1,4 @@
-const Lesson = require('../models/Tasks');
+const Lesson = require('../models/Task');
 
 
 exports.getTaskForm  = (req, res) => {
