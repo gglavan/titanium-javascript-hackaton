@@ -1,6 +1,6 @@
 exports.getLessons = (req, res) => {
 
-    res.render('lessons', {
+    res.render('lessons/lessons', {
         title: 'Lessons'
     });
 };

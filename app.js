@@ -145,11 +145,12 @@ app.get('/admin', adminController.getAdmin);
 // app.get('/admin', (req, res) => {
 //   res.json({title:'Dici'})
 // })
+
 // app.post('/admin', userController.postAdmin);
 
 // Added now
 app.get('/lessons', lessonsController.getLessons);
-app.post('/lessons', lessonsController.postLessons);
+//app.post('/lessons', lessonsController.postLessons);
 
 
 app.get('/test', (req, res) => {
