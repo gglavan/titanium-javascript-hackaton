@@ -47,15 +47,15 @@ exports.getLessons = (req, res) => {
 exports.getLesson = async(req, res) => {
   const id = req.params.id;
   try {
-    let lesson = await Lesson.findById(id);
+    let lesson = await Lesson.findById(id).exec();
     console.log(lesson)
-    let tasks = await Task.find({$where: {
+    let tasks = await Task.find({
       lessonId: lesson._id
-    }})
+    }).exec();
     console.log(tasks)
     res.render('lessons/lesson', {
-      lesson,
-      tasks 
+      'lesson': lesson,
+      'tasks': tasks 
     });
   } catch(err) {
     res
@@ -64,12 +64,18 @@ exports.getLesson = async(req, res) => {
   }
   // Lesson.findById(id)
   //   .exec()
-  //   .then(doc => {
-  //     if (doc) {
-  //       console.log(doc)
-  //       res.render('lessons/lesson', {
-  //         'lesson': doc
-  //       });
+  //   .then(lesson => {
+  //     if (lesson) {
+  //       Task.find({$where: {
+  //             lessonId: lesson._id
+  //           }}).exec().then(tasks =>
+  //             console.log(doc);
+  //             res.render('lessons/lesson', {
+  //               lesson,
+  //               tasks
+  //             });
+  //           )
+        
         
   //     } else {
   //       res
@@ -83,11 +89,11 @@ exports.getLesson = async(req, res) => {
   //   });
 
 
-    lesson.save((err) => {
-        if (err) { return next(err); }
-        console.log('Lesson saved')
-        res.redirect('/admin');
-    });
+    // lesson.save((err) => {
+    //     if (err) { return next(err); }
+    //     console.log('Lesson saved')
+    //     res.redirect('/admin');
+    // });
 };
 
 exports.getLessons = (req, res) => {
